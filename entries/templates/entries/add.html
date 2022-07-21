@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ form.name.errors }}</h1>
+<div class="form-floating">
+    <!-- <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea> -->
+    <form method="POST" action="."> {% csrf_token %}
+        {{ form.text }}
+        <!-- <label for="floatingTextarea2">What's on mind ?</label> -->
+        <button type="submit" class="btn btn-outline-info my-4" style="width: 100%; font-size: 20px; font-weight: 600;">ADD NOTE</button>
+    </form>
+</div>
+
+{% endblock content %}

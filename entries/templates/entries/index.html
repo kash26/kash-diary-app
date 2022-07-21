@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <a href="{% url 'add' %}" type="button" class="btn btn-outline-info my-4" style="width: 100%; font-size: 20px; font-weight: 600;">ADD NOTE</a>
+
+
+  {% for entry in entries %}
+
+    <div class="card mb-4" style="width: 100%;">
+        <div class="card-body">
+          <h5 class="card-title">{{ entry.date_posted }}</h5>
+          <hr>
+          <h6 class="card-subtitle mb-2 text-muted">{{ entry.text }}</h6>
+        </div>
+    </div>
+    
+  {% endfor %}
+  
+
+{% endblock content %}
